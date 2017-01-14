@@ -1,0 +1,42 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Page Two</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
+ -->
+
+
+ <ion-scroll scrollX="true" scrollY="true" style="height: 100px;">
+    <h2>Top</h2>
+    <ion-list>
+        <ion-item *ngFor="let item of top_item_array; let idx = index" (tap)="move_from_top_to_bottom(idx)">
+            {{item}}
+        </ion-item>
+    </ion-list>
+</ion-scroll>
+<ion-scroll scrollX="true" scrollY="true" style="height: 100px;">
+    <h2>Bottom</h2>
+    <ion-list>
+        <ion-item *ngFor="let item of bottom_item_array; let idx = index" (tap)="move_from_bottom_to_top(idx)">
+            {{item}}
+        </ion-item>
+    </ion-list>
+</ion-scroll>

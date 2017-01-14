@@ -29,14 +29,15 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "1.0.0",
+    "eslint": "^3.13.1",
     "typescript": "2.0.9"
   },
   "cordovaPlugins": [
-    "cordova-plugin-whitelist",
     "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-device",
-    "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
@@ -47,5 +48,5 @@
       "locator": "ios"
     }
   ],
-  "description": "homework: An Ionic project"
+  "description": "myIonic2Project: An Ionic project"
 }
