@@ -7,8 +7,25 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
+<ion-content class="home" padding>
+<ion-grid>
+<ion-row>
+  <ion-slides [options]="mySlideOptions">
+    <ion-slide *ngFor="let item of items">
+      <img src="images/1.jpeg">
+    </ion-slide>
+  </ion-slides>
+</ion-row>
+  <ion-row wrap>
+  <ion-col width-33 *ngFor="let item of items">
+  <button ion-buton>
+  <ion-icon [name]="item.icon"></ion-icon>
+  <div class="item-note" item-right>{{item.note}}</div>
+  </button>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+  <!-- <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-left></ion-icon>
       {{item.title}}
@@ -19,5 +36,5 @@
   </ion-list>
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  </div> -->
 </ion-content>
