@@ -9,6 +9,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class Page2 {
   selectedItem: any;
   icons: string[];
+  serviceList: Array<{title:string, image:string, component:Component}>;
   items: Array<{title: string, note: string, icon: string}>;
   mySlideOptions = {
     pager:true
@@ -27,7 +28,7 @@ export class Page2 {
       this.items.push({
         title: 'Item ' + i,
         note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+        icon: this.icons[Math.floor(Math.random() * this.icons.length)], 
       });
     }
   }

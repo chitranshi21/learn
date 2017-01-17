@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="home" padding>
+<ion-content class="home">
 <ion-grid>
 <ion-row>
   <ion-slides [options]="mySlideOptions">
@@ -18,11 +18,12 @@
 </ion-row>
   <ion-row wrap>
   <ion-col width-33 *ngFor="let item of items">
-  <button ion-buton>
-  <ion-icon [name]="item.icon"></ion-icon>
-  <div class="item-note" item-right>{{item.note}}</div>
-  </button>
+
+    <ion-card>
+      <img src="images/tap.png"/>
+    </ion-card>
   </ion-col>
+
   </ion-row>
 </ion-grid>
   <!-- <ion-list>
