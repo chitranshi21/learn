@@ -26,17 +26,20 @@
 <ion-row>
   <ion-slides [options]="mySlideOptions">
     <ion-slide *ngFor="let banner of bannerList">
-      <img src="images/1.jpeg">
+      <img [src]="banner.image">
     </ion-slide>
   </ion-slides>
 </ion-row>
 <ion-item-divider>
 </ion-item-divider>
   <ion-row wrap>
-  <ion-col width-33 *ngFor="let menu of menuList" (tap)="menuTap($event)">
+  <ion-col width-33 *ngFor="let menu of menuList" (tap)="menuTap($event)" 
+  (click)="onClickCard($event, menu)">
     <ion-card>
       <img [src]=menu.image/>
-      <div>{{menu.name}}</div>
+      <ion-item><ion-label>{{menu.name}}</ion-label></ion-item>
+      
+      <!-- <div>{{menu.name}}</div> -->
     </ion-card>
   </ion-col>
 

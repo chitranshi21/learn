@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,ToastController } from 'ionic-angular';
 
+import { PlumbingPage } from '../plumbing/plumbing';
 
 /*
   Generated class for the Menu page.
@@ -20,47 +21,48 @@ export class MenuPage {
   			 public toastCtrl: ToastController) {
   	this.menuList = [];
   	this.menuList.push({
-  							name:"plumbing",
-  							image:"",
-  							page:null},
+  							name : "plumbing",
+  							image : "images/plumber_icon.png",
+  							page : PlumbingPage
+              },
   						{
   							name:"Electrical",
-  							image:"",
+  							image:"images/electrician_icon.png",
   							page:null
   						},
   						{
   							name:"Carpantry",
-  							image:"",
+  							image:"images/carpanter.png",
   							page:null
   						},
   						{
   							name:"Appliances",
-  							image:"",
+  							image:"images/appliance_icon.png",
   							page:null
   						},
   						{
   							name:"Cars and Bikes",
-  							image:"",
+  							image:"images/car_repair_icon.png",
   							page:null
   						},
   						{
   							name:"Beauty",
-  							image:"",
+  							image:"images/beauty_icon.png",
   							page:null
   						},
   						{
   							name:"Business Service",
-  							image:"",
+  							image:"images/business_icon.svg",
   							page:null
   						},
   						{
   							name:"Personal Service",
-  							image:"",
+  							image:"images/other_icon.png",
   							page:null
   						},
   						{
   							name:"Others",
-  							image:"",
+  							image:"images/other_icon.png",
   							page:null
   						},
   						);
@@ -72,11 +74,11 @@ export class MenuPage {
   	this.bannerList.push(
   							{
   								name: "test banner 1",
-  								image: "",
+  								image: "images/electrician_banner.jpg",
   							},
   							{
   								name: "test banner 1",
-  								image: "",
+  								image: "images/plumber_banner.jpg",
   							}
   		)
   }
@@ -93,5 +95,7 @@ export class MenuPage {
   		);
   	toast.present();
   }
-
+  onClickCard($event, menu){
+    this.navCtrl.push(menu.page);
+  }
 }
