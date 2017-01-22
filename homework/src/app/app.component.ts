@@ -13,7 +13,7 @@ import { MenuPage } from '../pages/menu/menu';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Page1;
+  rootPage: any = MenuPage;
   pages: Array<{title: string, component: any}>;
 
 
@@ -22,8 +22,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: Page1 },
-      { title: 'My Orders', component: Page2 },
+      { title: 'Home', component: MenuPage },
+      { title: 'My Orders', component: MenuPage },
       { title: 'Contact Us', component:MenuPage },
     ];
 

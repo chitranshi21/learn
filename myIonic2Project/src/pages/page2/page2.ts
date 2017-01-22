@@ -1,51 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
+import { Geolocation } from 'ionic-native';
+
+declare var google;
 
 @Component({
   selector: 'page-page2',
   templateUrl: 'page2.html'
 })
 export class Page2 {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
-  top_item_array: String[]; 
-  bottom_item_array:String[]; 
+  @ViewChild('map') mapElement:ElementRef;
+  map:any;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-    this.top_item_array = ["Item A", "Item B", "Item C"];
-    this.bottom_item_array = ["Item D", "Item E", "Item F"];
-
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+   ngAfterViewInit() {
+    this.loadMap();
   }
-  move_from_top_to_bottom(idx){
-      this.bottom_item_array.push(this.top_item_array[idx])
-      this.top_item_array.splice(idx, 1)
+
+  constructor(public navCtrl: NavController, public navParams: NavParams
+    , public platform: Platform) {
+   //this.loadMap();
+  }
+
+  ionViewLoaded() {}
+
+  loadMap(){
+    let thisMap = this.map;
+    let thisMapElement = this.mapElement;
+    this.platform.ready().then(function(){
+      Geolocation.getCurrentPosition().then(function(position) {
+        console.log('res', position.coords.latitude, position.coords.longitude);
+        let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        let mapOptions = {
+          center: latLng,
+          zoom: 15,
+          //mapTypeId: google.maps.mapTypeId.ROADMAP
+        };
+        thisMap = new google.maps.Map(thisMapElement.nativeElement, mapOptions);
+       
+      });
+     });     
     }
 
-    move_from_bottom_to_top(idx){
-      this.top_item_array.push(this.bottom_item_array[idx])
-      this.bottom_item_array.splice(idx, 1)
-    }
-  itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(Page2, {
-      item: item
+  addMarker(){
+    let markerMap = this.map;
+    let marker = new google.maps.Marker({
+      map: this.map,
+      //animation: google.maps.Animantion.DROP,
+      position: markerMap.getCenter()
     });
+
+    let content = "<h4>Information!</h4>";
+    //this.addInfoWindow(marker, content);
   }
 }

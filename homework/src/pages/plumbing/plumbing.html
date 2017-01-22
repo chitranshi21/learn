@@ -14,16 +14,22 @@
 
 
 <ion-content padding>
-<ion-item>
-	<ion-label>Select one </ion-label>
-	<ion-select [(ngModel)]="toppings" multiple="true">
-    <ion-option>Bacon</ion-option>
-    <ion-option>Black Olives</ion-option>
-    <ion-option>Extra Cheese</ion-option>
-    <ion-option>Mushrooms</ion-option>
-    <ion-option>Pepperoni</ion-option>
-    <ion-option>Sausage</ion-option>
+<ion-item *ngFor="let plumbingService of plumbingServiceList">
+	<ion-label color="primary" floating>{{plumbingService.name}}</ion-label>
+	<ion-select [(ngModel)]="plumbingService.selectedList" 
+	(ngModelChange)="updateSelectedList()" multiple="true">
+	<ion-option *ngFor="let comp of plumbingService.component">{{comp}}</ion-option>
+  
   </ion-select>
 </ion-item>
-<ion-item><ion-label>{{toppings}}</ion-label></ion-item>
+<ion-label color="primary" stacked>Service for : </ion-label>
+<ion-item><ion-label>{{selectedList}}</ion-label></ion-item>
+
+	<ion-label color="primary" stacked>Description :</ion-label>
+	<ion-textarea placeholder="please explain the problem " size="auto"></ion-textarea>
+<ion-item-divider>
+</ion-item-divider>
+
+	<button ion-button full (click)="onclickNext()">Next</button>
+
 </ion-content>

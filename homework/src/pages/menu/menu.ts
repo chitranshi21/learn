@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams,ToastController } from 'ionic-angular';
 
 import { PlumbingPage } from '../plumbing/plumbing';
+import { ElectricalPage } from '../electrical/electrical';
+import { CarpentryPage } from '../carpentry/carpentry'; 
 
 /*
   Generated class for the Menu page.
@@ -28,12 +30,12 @@ export class MenuPage {
   						{
   							name:"Electrical",
   							image:"images/electrician_icon.png",
-  							page:null
+  							page:ElectricalPage
   						},
   						{
   							name:"Carpantry",
   							image:"images/carpanter.png",
-  							page:null
+  							page:CarpentryPage
   						},
   						{
   							name:"Appliances",
@@ -87,13 +89,13 @@ export class MenuPage {
     console.log('ionViewDidLoad MenuPage');
   }
   menuTap(event){
-  	let toast = this.toastCtrl.create(
-  				{
-  					message: "you clicked our service",
-  					duration : 3000
-  				}
-  		);
-  	toast.present();
+  	// let toast = this.toastCtrl.create(
+  	// 			{
+  	// 				message: "you clicked our service",
+  	// 				duration : 3000
+  	// 			}
+  	// 	);
+  	// toast.present();
   }
   onClickCard($event, menu){
     this.navCtrl.push(menu.page);
