@@ -4,6 +4,7 @@ import { NavController, NavParams,ToastController } from 'ionic-angular';
 import { PlumbingPage } from '../plumbing/plumbing';
 import { ElectricalPage } from '../electrical/electrical';
 import { CarpentryPage } from '../carpentry/carpentry'; 
+import { AppliancesPage } from '../appliances/appliances';
 
 /*
   Generated class for the Menu page.
@@ -40,7 +41,7 @@ export class MenuPage {
   						{
   							name:"Appliances",
   							image:"images/appliance_icon.png",
-  							page:null
+  							page:AppliancesPage
   						},
   						{
   							name:"Cars and Bikes",

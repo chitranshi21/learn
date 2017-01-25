@@ -8,6 +8,7 @@ import { PlumbingPage } from '../pages/plumbing/plumbing';
 import { AddressPage } from '../pages/address/address';
 import { ElectricalPage } from '../pages/electrical/electrical';
 import { CarpentryPage } from '../pages/carpentry/carpentry';
+import { AppliancesPage } from '../pages/appliances/appliances';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CarpentryPage } from '../pages/carpentry/carpentry';
     PlumbingPage,
     AddressPage,
     ElectricalPage,
-    CarpentryPage
+    CarpentryPage,
+    AppliancesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,7 +34,8 @@ import { CarpentryPage } from '../pages/carpentry/carpentry';
     PlumbingPage,
     AddressPage,
     ElectricalPage,
-    CarpentryPage
+    CarpentryPage,
+    AppliancesPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
