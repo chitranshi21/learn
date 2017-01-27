@@ -5,7 +5,11 @@ import { PlumbingPage } from '../plumbing/plumbing';
 import { ElectricalPage } from '../electrical/electrical';
 import { CarpentryPage } from '../carpentry/carpentry'; 
 import { AppliancesPage } from '../appliances/appliances';
-
+import { CarsandbikesPage } from '../carsandbikes/carsandbikes';
+import { BeautyPage } from '../beauty/beauty';
+import { BusinessPage } from '../business/business';
+import { PersonalPage } from '../personal/personal';
+import { OtherPage } from '../other/other';
 /*
   Generated class for the Menu page.
 
@@ -46,27 +50,27 @@ export class MenuPage {
   						{
   							name:"Cars and Bikes",
   							image:"images/car_repair_icon.png",
-  							page:null
+  							page:CarsandbikesPage
   						},
   						{
   							name:"Beauty",
   							image:"images/beauty_icon.png",
-  							page:null
+  							page:BeautyPage
   						},
   						{
   							name:"Business Service",
   							image:"images/business_icon.svg",
-  							page:null
+  							page:BusinessPage
   						},
   						{
   							name:"Personal Service",
   							image:"images/other_icon.png",
-  							page:null
+  							page:PersonalPage
   						},
   						{
   							name:"Others",
   							image:"images/other_icon.png",
-  							page:null
+  							page:OtherPage
   						},
   						);
 

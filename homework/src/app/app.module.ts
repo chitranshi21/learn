@@ -9,6 +9,13 @@ import { AddressPage } from '../pages/address/address';
 import { ElectricalPage } from '../pages/electrical/electrical';
 import { CarpentryPage } from '../pages/carpentry/carpentry';
 import { AppliancesPage } from '../pages/appliances/appliances';
+import { CarsandbikesPage } from '../pages/carsandbikes/carsandbikes';
+import { BeautyPage } from '../pages/beauty/beauty';
+import { BusinessPage } from '../pages/business/business'; 
+import { PersonalPage } from '../pages/personal/personal';
+import { OtherPage } from '../pages/other/other';
+import { ContactusPage } from '../pages/contactus/contactus';
+import { MyordersPage } from '../pages/myorders/myorders';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { AppliancesPage } from '../pages/appliances/appliances';
     AddressPage,
     ElectricalPage,
     CarpentryPage,
-    AppliancesPage
+    AppliancesPage,
+    CarsandbikesPage,
+    BeautyPage,
+    BusinessPage,
+    PersonalPage,
+    OtherPage,
+    ContactusPage,
+    MyordersPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -35,7 +49,14 @@ import { AppliancesPage } from '../pages/appliances/appliances';
     AddressPage,
     ElectricalPage,
     CarpentryPage,
-    AppliancesPage
+    AppliancesPage,
+    CarsandbikesPage,
+    BeautyPage,
+    BusinessPage,
+    PersonalPage,
+    OtherPage,
+    ContactusPage,
+    MyordersPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
