@@ -11,6 +11,8 @@
   <allow-intent href="sms:*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
+  <allow-navigation href="*"/>
+  <allow-navigation href="http://192.168.2.5:8000"/>
   <platform name="android">
     <allow-intent href="market:*"/>
   </platform>

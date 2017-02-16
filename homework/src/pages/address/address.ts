@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Geolocation } from 'ionic-native';
 /*
   Generated class for the Address page.
@@ -15,7 +15,8 @@ export class AddressPage {
 	@ViewChild('map') mapElement;
 	map:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public toastCtrl: ToastController) {}
 
   ionViewDidLoad() {
     this.initMap();
@@ -37,16 +38,17 @@ export class AddressPage {
       position: this.map.getCenter()
     });
     },(err) => {
+    let toast = this.toastCtrl.create(
+         {
+           message: "Error In loading map",
+           duration : 3000
+         }
+     );
+      toast.present();
       console.log(err);
     }
     );
-  	// let latLng = new google.maps.LatLng(-34.9290, 138.6010);
-  	// let mapOptions = {
-  	// 	center:latLng,
-  	// 	zoom:15,
-  	// 	mapTypeId: google.maps.MapTypeId.ROADMAP
-  	// };
-  	// this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+  	
   }
 
 }
